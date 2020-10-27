@@ -3,6 +3,13 @@ Make a function createNewElement(tagName, text) that takes in 2
 parameters and returns a new element with the correct text
 ************************************************************** */
 function createNewElement(tagName, text) {
+   //create a new element with tag 
+   const newElement = document.createElement(tagName);
+   //set the textcontent to the new element
+   newElement.textContent = text;
+   //return 
+   return newElement;
+
     
 }
 
@@ -22,9 +29,30 @@ const instuctors = [
     { mike: 'Mike', dex: 'Dexter'},
     { ga: 'General Assembly', cohort: 'SEI1019' }
 ]
+//long way 
+// const giveMeKeys = (array) => {
+//     const result =[];
+//     //iterate through the array
+//     for(let i=0; i<array.lengt; i++){
+//         //set up a intermediate variable(temporary variable)
+//         let obj = array[i]; //each element { rome: 'Rome', pete: 'Pete'}
+//         //iterate through each object
+//         for(let key in object){// { rome: 'Rome', pete: 'Pete'},
+//             //push the key into the result array
+//             result.push(key);// amswer should be [rome ,pete, mike,ga,cohort]
+//         }
+        
+//     }
+//     return result;
 
-const giveMeKeys = (array) => {
+// }
 
+function giveMeKeys(array){
+    let result = [];
+    array.forEach(obj=> {
+        result = result.concat(object.keys(obj));
+    })
+    return result;
 }
 
 console.log(giveMeKeys(instuctors));
